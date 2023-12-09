@@ -23,7 +23,7 @@ func parse() (values []string) {
 }
 
 func main() {
-	// fmt.Println("part one:", part1())
+	fmt.Println("part one:", part1())
 	fmt.Println("part two:", part2())
 }
 
@@ -83,7 +83,6 @@ func part2() int {
 		for _, char := range strings.Split(line, "") {
 			_, err := strconv.Atoi(char)
 			if err == nil {
-				fmt.Print("first: ", char, " ---- ")
 				first = char
 				break
 			} else {
@@ -98,7 +97,6 @@ func part2() int {
 					}
 				}
 				if found {
-					fmt.Print("first: ", num, " ---- ")
 					first = num
 					break
 				}
@@ -109,7 +107,6 @@ func part2() int {
 		for _, char := range strings.Split(reverse(line), "") {
 			_, err := strconv.Atoi(char)
 			if err == nil {
-				fmt.Print("last: ", string(char), " ---- ")
 				last = char
 				break
 			} else {
@@ -124,7 +121,6 @@ func part2() int {
 					}
 				}
 				if found {
-					fmt.Print("last: ", num, " ---- ")
 					last = num
 					break
 				}
@@ -133,8 +129,6 @@ func part2() int {
 
 		v, _ := strconv.Atoi(first + last)
 		sum += v
-
-		fmt.Println(line, first, last)
 	}
 
 	return sum
